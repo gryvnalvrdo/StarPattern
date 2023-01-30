@@ -1,26 +1,13 @@
-# Tugas Akhir Praktek DTI
-Pertama - tama, saya inisialisasi nilai n sebesar 6 agar kolomnya sampai 6 ke bawah
-Untuk angka 0 saya buat dulu starpattern biasa seperti persegi panjang dengan panjangnya sebesar 4 bintang dan lebarnya sebesar 6 bintang. Saya pakai j= 1-5 untuk angka 0 tetapi 5 nya saya pakai sebagai spasi untuk karakter berikutnya. 
-Lalu untuk membuat angka 0 , saya menggunakan logika if dimana saya menghilangkan bintang-bintang di dalam persegi panjang kecuali bagian luarnya. Karena p=4 dan l=6 maka jadi saya pakai if (j==1 || j==4 || i==n || i==1) jka kondisinya memenuhi maka diberi bintang. 
-Jadi (j==1) untuk bagian panjan yang pertama dan j == 4 untuk bagian panjang yang terakhir dan i==n berarti i==6 dimana n=6 yang berarti diberi bintang pada bagian lebar yang paling bawah dan i==1 berarti diberi bintang pada bagian lebar yang paling atas.
-Ini awalnya :                                          Jadinya :
-(i) 1 2 3 4 (j ke bawah)
- 1  * * * *                                            * * * *
- 2  * * * *                                            *     *
- 3  * * * *                                            *     *
- 4  * * * *                                            *     *
- 5  * * * *                                            *     *
- 6  * * * *                                            * * * *
-Untuk angka 2 j nya saya pakai dari 6-10 dan sama dengan angka 0 angka terakhirnya saya pakai sebagai spasi untuk karakter berikutnya yang berarti pada kondisi ini adalah angka 10.  
-Untuk algoritmanya saya pakai if (i==6 || i==1 || i==3 || j==9 && j+i==11 || j==6 && j+i==10 || j==6 && j+i==11). 
-Untuk i==6 berarti bagian lebar yang paling bawah.
-Untuk i==3 berarti bagian lebar yang ke 3
-Untuk i==1 berarti bagian lebar yang paling atas
-Ini awalnya :                                          Jadinya :
-(i) 6  7  8  9 (j ke bawah)
- 1  *  *  *  *                                            *  *  *  *
- 2  *  *  *  *                                                     *
- 3  *  *  *  *                                            *  *  *  *
- 4  *  *  *  *                                            *
- 5  *  *  *  *                                            *
- 6  *  *  *  *                                            *  *  *  *
+NOTE: i = baris, j = kolom.
+
+Langkah pengerjaan:
+
+Tentukan banyak baris (i).
+Syntax yang saya gunakan adalah for dan if
+Pola yang akan saya buat adalah 0,2,G
+Pola yang saya buat bentuk awalnya adalah persegi panjang yang akan dimodifikasi menggunakan "if"
+Jadi yang paling awal kita buat adalah "0". Kode diatas berarti; jumlah dari baris (i) adalah 6 baris dan jumlah dari kolom (j) adalah 5. Untuk j==5 print(" ") adalah command untuk menghilangkan kolom kelima (saya membuatnya menjadi spasi). lalu syarat berikutnya adalah jika j bernilai 1, j bernilai 4, i bernilai 1, dan i bernilai sama dengan n maka print symbol bintang, jika tidak maka print kosong/spasi. j bernilai 1 brarti kolom pertama kita print bintang, j bernilai 4 berarti kolom keempat kita print bintang, i bernilai 1 berarti baris pertama kita print bintang, dan i bernilai sama dengan n berarti baris keenam kita print bintang, selain dari baris dan kolom diatas kita kosongkan dengan print spasi.
+Lalu kita membuat angka "2". Syarat (i==6 || i==1 || i==3 || j==9 && j+i==11 || j==6 && j+i==10 || j==6 && j+i==11) dimana i==1,i==3,i==6 dimana akan diprint bintang pada baris ke-1, ke-3, ke-6 dan (j==6 && j+i==10) dimana jika kolomnya ke-6 dan memenuhi kondisi j+i==10 maka akan diprint bintang dan (j==6 && j+i==11) dimana jika kolomnya ke-6 dan memenuhi kondisi j+i==11 maka akan diprint bintang dan (j==9 && j+i==11) dimana jika kolomnya ke-9 dan memenuhi kondisi j+i==11 maka akan diprint bintang
+Last, untuk membuat huruf "G" kita menggunakan persegi panjang juga seperti pola sebelumnya. Untuk (j+i==4&&j==3) berarti jika nilai j+1 adalah 4 DAN j bernilai 3 maka kita print spasi. Lalu untuk (j==1||j==5||j+i==4||j+i==6&&i<4) artinya jika j bernilai 1, j bernilai 5, j+1 bernilai 4, j+1 bernilai 6 kita akan print bintang tapi dengan syarat tambahan yaitu i harus bernilai kurang dari 4, dan jika nilai i sudah lebih dari/sama dengan 4 maka kita tidak akan mengprint bintang (kita print spasi). Dan yang terakhir, jika tidak memenuhi syarat syarat diatas maka kita print spasi.
+Lalu pada baris terakhir jangan lupa tambahkan System.out.println(); yang berfungsi untuk jika nilai i sudah salah maka dia akan ke baris selanjutnya.
+Kesimpulan: Kesimpulannya, agar lebih mudah membayangkan kode/bagaimana cara kita memecahkan kodenya anggap saja pattern pattern itu terbagi dari berbagai kotak/persegi... Dengan begitu kita akan mudah untuk menyelesaikan kode sesuai polanya, seperti halnya saya menggunakan 3 kotak/persegi sebagai base/dasar pattern saya yang lalu perseginya diubah dengan command "if" untuk memberikan syarat symbol bintang yang mana saja yang harus di print dan yang harus tidak di print.
